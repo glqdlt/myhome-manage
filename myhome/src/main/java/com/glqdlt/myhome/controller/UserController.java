@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.glqdlt.myhome.domain.User;
-import com.glqdlt.myhome.service.UserService;
+import com.glqdlt.myhome.repository.UserRepository;
 
 @RequestMapping(value = "/user")
 @RestController
 public class UserController {
 
 	@Autowired
-	UserService userServ;
+	UserRepository userRepo;
 
 	Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<User> findAllUsers() {
-		return userServ.find_AllUsers();
+		return userRepo.findAll();
 	}
 
 	@RequestMapping(value = "/auth", method = RequestMethod.POST)
 	public String authUser(@RequestParam(name = "id") String id, @RequestParam(name = "password") String password) {
 
-		User user = userServ.findById(id);
+		User user = userRepo.findById(id);
 		if (user != null) {
 
 			if (user.getPassword().equals(password)) {
