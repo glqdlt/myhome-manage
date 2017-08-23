@@ -30,5 +30,6 @@ public class MyhomeApplication implements CommandLineRunner {
 		userRepo.save(new User("전일웅", "jhun", "jhun1234", "jhun@jhun.com", "Seoul", "010-1234-1234", 9));
 		userRepo.save(new User("박치훈", "park", "park1234", "park@park.com", "Seoul", "010-1234-1234", 1));
 
+		
 	}
 }
