@@ -7,5 +7,6 @@ import com.glqdlt.myhome.domain.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 	User findById(String Id);
+	User findByNo(Integer no);
 
 }

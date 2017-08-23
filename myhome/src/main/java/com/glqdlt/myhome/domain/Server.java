@@ -15,6 +15,7 @@ public class Server {
 	private String name;
 	private String ip;
 	private String remarks;
+	private String os;
 
 	public String getName() {
 		return name;
@@ -40,7 +41,6 @@ public class Server {
 		this.os = os;
 	}
 
-	private String os;
 
 	public Integer getNo() {
 		return no;
