@@ -13,4 +13,10 @@ public class MyhomeApplicationTests {
 	public void contextLoads() {
 	}
 
+	
+	
+	
+	// pid = netstat -ano | findstr 0.0.0.0:8080
+	// taskkill /f /pid {pid}
+	
 }
