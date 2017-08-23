@@ -29,4 +29,11 @@ public class UserServiceImpl implements UserService {
 		userRepo.delete(no);
 	}
 
+	@Override
+	public User findById(String id) {
+
+		return userRepo.findById(id);
+
+	}
+
 }

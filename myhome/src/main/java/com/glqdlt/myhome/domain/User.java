@@ -18,11 +18,9 @@ public class User {
 	private String phone;
 	private Integer role;
 
-	
-
 	public User() {
 	}
-	
+
 	public User(String name, String id, String password, String email, String address, String phone, Integer role) {
 		this.name = name;
 		this.id = id;
@@ -95,6 +93,11 @@ public class User {
 
 	public void setRole(Integer role) {
 		this.role = role;
+	}
+	
+	@Override
+	public String toString() {
+		return "id:"+id+", password:"+password;
 	}
 
 }
