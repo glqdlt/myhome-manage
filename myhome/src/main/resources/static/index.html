@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AngularTestPage</title>
+<!-- webjars-locator 가 있어서 원래 문법은 사용하질 않음. -->
+<!-- <link rel='stylesheet' href='/webjars/bootstrap/3.1.0/css/bootstrap.min.css'> -->
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+</head>
+<body ng-app="hello">
+	<div class="container">
+	<h2>Hello World</h2>
+	<hr/>
+		<h3>Users</h3>
+		<div ng-controller="home" ng-cloak class="ng-cloak">
+		
+		<ul>
+			<li>no, name</li>
+		</ul>
+		<ul ng-repeat="u in users">
+					<li>{{u.no}}, {{u.name}}, {{u.id}}</li>
+
+		</ul>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="/js/hello.js"></script>
+</body>
+</html>

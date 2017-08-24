@@ -3,8 +3,6 @@ package com.glqdlt.myhome;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -37,6 +35,7 @@ public class MyhomeApplication implements CommandLineRunner {
 
 		userRepo.save(new User("전일웅", "jhun", "jhun1234", "jhun@jhun.com", "Seoul", "010-1234-1234", 9));
 		userRepo.save(new User("박치훈", "park", "park1234", "park@park.com", "Seoul", "010-1234-1234", 1));
+		userRepo.save(new User("홍길동", "hong", "hong1234", "hong@hong.com", "Seoul", "010-1234-1234", 1));
 
 	}
 }
