@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org">
-<head lang="en">
-<meta charset="UTF-8"/>
-<title>Hello my home</title>
+<html>
+<head>
+<meta>
+<title>AngularTestPage</title>
+<!-- webjars-locator 가 있어서 원래 문법은 사용하질 않음. -->
+<!-- <link rel='stylesheet' href='/webjars/bootstrap/3.1.0/css/bootstrap.min.css'> -->
+<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
 </head>
-<body>
+<body ng-app="hello">
+  <div class="container">
+    <h1>Greeting</h1>
+    <div ng-controller="home" ng-cloak class="ng-cloak">
+      <p>The ID is {{user.id}}</p>
+      <p>The User Name is {{user.name}}</p>
+    </div>
+  </div>
 
-<h2>Hello Myhome Management System.!</h2>
-
-<form action="/user/auth" method="post">
-
-	<input type="text" name="id" placeholder="Input Your Id"/>
-	<input type="password" name="password" placeholder="Input Your Password"/>
-    <input type="submit"/>
-
-</form>
-
+<!-- 
+<script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
+ -->
 </body>
 </html>

@@ -17,5 +17,9 @@ public class HomeController {
 	public String join_get() {
 		return "join";
 	}
+	@RequestMapping(value = "angular", method = RequestMethod.GET)
+	public String angular_get() {
+		return "angular_test";
+	}
 
 }

@@ -3,6 +3,8 @@ package com.glqdlt.myhome;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +13,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.glqdlt.myhome.domain.User;
 import com.glqdlt.myhome.repository.UserRepository;
 
+/**
+ * 같은 패키지에 있는 component 가 아니면 인식을 못하기 때문에, 아래와 같이 패키지 경로를 작성해줘야함. 정규식도 먹히는듯.
+ * 
+ * @author iw.jhun
+ *
+ */
 @EnableJpaRepositories(basePackages = "com.glqdlt.myhome.*")
 @EntityScan(basePackages = "com.glqdlt.myhome.*")
 @ComponentScan(basePackages = "com.glqdlt.myhome.*")
@@ -30,6 +38,5 @@ public class MyhomeApplication implements CommandLineRunner {
 		userRepo.save(new User("전일웅", "jhun", "jhun1234", "jhun@jhun.com", "Seoul", "010-1234-1234", 9));
 		userRepo.save(new User("박치훈", "park", "park1234", "park@park.com", "Seoul", "010-1234-1234", 1));
 
-		
 	}
 }
