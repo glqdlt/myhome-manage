@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -72,14 +73,14 @@ public class UserController {
 //		"phone": "010-1234-1234",
 //		"role": 9
 //		}	
-//	 @RequestMapping(value = "/join", method = RequestMethod.POST)
-//	 public ResponseEntity<?> joinUser(@RequestBody User user) {
-//	
-//	 logger.info("Welcome to join User");
-//	 logger.info(user.toString());
-//	 userRepo.save(user);
-//	 return new ResponseEntity<>(HttpStatus.CREATED);
-//	 }
+	 @RequestMapping(value = "/join2", method = RequestMethod.POST)
+	 public ResponseEntity<?> joinUser(@RequestBody User user) {
+	
+	 logger.info("Welcome to join User");
+	 logger.info(user.toString());
+	 userRepo.save(user);
+	 return new ResponseEntity<>(HttpStatus.CREATED);
+	 }
 	 
 	 
 

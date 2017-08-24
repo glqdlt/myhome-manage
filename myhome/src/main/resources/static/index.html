@@ -7,25 +7,54 @@
 <!-- <link rel='stylesheet' href='/webjars/bootstrap/3.1.0/css/bootstrap.min.css'> -->
 <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
 </head>
-<body ng-app="hello">
+<body ng-app="main">
 	<div class="container">
-	<h2>Hello World</h2>
-	<hr/>
-		<h3>Users</h3>
-		<div ng-controller="home" ng-cloak class="ng-cloak">
-		
-		<ul>
-			<li>no, name</li>
-		</ul>
-		<ul ng-repeat="u in users">
-					<li>{{u.no}}, {{u.name}}, {{u.id}}</li>
+		<h2>Hello World</h2>
+		<hr />
+		<div ng-controller="mainCtrl" ng-cloak class="ng-cloak"
+			class="userList">
+			<h3>User List</h3>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>no</td>
+						<td>name</td>
+						<td>id</td>
+						<td>address</td>
+						<td><a href="/user/find/all">RestApi</a></td>
+					</tr>
+					<tr ng-repeat="u in users">
+						<td>{{u.no}}</td>
+						<td>{{u.name}}</td>
+						<td>{{u.id}}</td>
+						<td>{{u.address}}</td>
+						<td><a ng-href="/user/find/{{u.no}}">RestApi</a></td>
 
-		</ul>
+					</tr>
+				</tbody>
+			</table>
 
+
+			<hr />
+			<button type="button"
+				ng-click="userAddShow=(userAddShow ? false : true)">UserAdd</button>
+			<div class="userAdd" ng-if="userAddShow">
+				<h3>User Add</h3>
+
+				<form ng-submit="submitUserForm()">
+					<label for="userName">Name: </label><br /> <input type="text"
+						id="userName" ng-model="name" /> <br /> <label for="userId">Id:
+					</label><br /> <input type="text" id="userId" ng-model="id" /> <br />
+					<label for="userAddress">Address: </label><br /> <input
+						type="text" id="userAddress" ng-model="address" /> <br /> <input
+						type="submit" value="Submit" /> <input type="reset" value="Reset" />
+					<br />
+				</form>
+
+			</div>
 		</div>
 	</div>
-
 	<script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
-	<script type="text/javascript" src="/js/hello.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
