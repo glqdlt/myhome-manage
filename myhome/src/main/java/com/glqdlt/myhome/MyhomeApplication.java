@@ -17,7 +17,7 @@ import com.glqdlt.myhome.repository.UserRepository;
  * @author iw.jhun
  *
  */
-@EnableJpaRepositories(basePackages = "com.glqdlt.myhome.repository.*")
+@EnableJpaRepositories(basePackages = "com.glqdlt.myhome.*")
 @EntityScan(basePackages = "com.glqdlt.myhome.domain.*")
 @ComponentScan(basePackages = "com.glqdlt.myhome.*")
 @SpringBootApplication

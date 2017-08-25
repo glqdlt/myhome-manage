@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.glqdlt.myhome.domain.user.User;
+import com.glqdlt.myhome.email.EmailSender;
 import com.glqdlt.myhome.repository.UserRepository;
 
 @RequestMapping(value = "/")
@@ -17,6 +19,9 @@ public class MainController {
 	
 	@Autowired
 	UserRepository userRepo;
+	
+	@Autowired
+	EmailSender emailSender;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -34,6 +39,14 @@ public class MainController {
 	public String calc() {
 		
 		return "settings";
+	}
+	@RequestMapping(value = "/mail", method = RequestMethod.GET)
+	public void mail() {
+		
+		User user = new User();
+		user.setEmail("glqdlt@naver.com");
+		emailSender.send(user);
+		
 	}
 	
 	

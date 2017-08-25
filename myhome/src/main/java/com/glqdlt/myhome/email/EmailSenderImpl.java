@@ -7,9 +7,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
-import com.glqdlt.myhome.domain.app.AppConfig;
 import com.glqdlt.myhome.domain.user.User;
-import com.glqdlt.myhome.repository.AppConfigRepository;
 
 @Component
 public class EmailSenderImpl implements EmailSender {
@@ -18,8 +16,6 @@ public class EmailSenderImpl implements EmailSender {
 	@Autowired
 	JavaMailSender eSender;
 
-	@Autowired
-	AppConfigRepository appRepo;
 
 	@Override
 	public void send(User user) {
@@ -39,9 +35,9 @@ public class EmailSenderImpl implements EmailSender {
 
 		SimpleMailMessage msg = new SimpleMailMessage();
 		msg.setTo(user.getEmail());
-		List<AppConfig> appconfig = appRepo.findAll();
-		msg.setSubject(appconfig.get(0).getEmail_subject());
-		msg.setText(appconfig.get(0).getEmail_writer());
+		msg.setSubject("test email");
+		msg.setText("text");
+		msg.setFrom("setFrom");
 
 		return msg;
 
