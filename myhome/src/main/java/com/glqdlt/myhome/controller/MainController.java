@@ -30,4 +30,11 @@ public class MainController {
 		
 		return "join";
 	}
+	@RequestMapping(value = "/setting", method = RequestMethod.GET)
+	public String calc() {
+		
+		return "settings";
+	}
+	
+	
 }

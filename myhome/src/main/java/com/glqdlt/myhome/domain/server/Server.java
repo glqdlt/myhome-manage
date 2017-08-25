@@ -1,4 +1,4 @@
-package com.glqdlt.myhome.domain;
+package com.glqdlt.myhome.domain.server;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

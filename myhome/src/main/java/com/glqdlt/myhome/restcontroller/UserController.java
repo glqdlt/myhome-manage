@@ -1,4 +1,4 @@
-package com.glqdlt.myhome.controller;
+package com.glqdlt.myhome.restcontroller;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.glqdlt.myhome.domain.User;
+import com.glqdlt.myhome.domain.user.User;
 import com.glqdlt.myhome.repository.UserRepository;
 
 @RequestMapping(value = "/user")
@@ -61,18 +61,6 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
-	// 리얼 rest
-//	Sample Json
-//	{
-//		"no": 3,
-//		"name": "김개똥",
-//		"id": "kim",
-//		"password": "kim1234",
-//		"email": "kim@jhun.com",
-//		"address": "Seoul",
-//		"phone": "010-1234-1234",
-//		"role": 9
-//		}	
 	 @RequestMapping(value = "/join2", method = RequestMethod.POST)
 	 public ResponseEntity<?> joinUser(@RequestBody User user) {
 	

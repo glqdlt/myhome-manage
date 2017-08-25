@@ -1,14 +1,10 @@
-package com.glqdlt.myhome.controller;
+package com.glqdlt.myhome.restcontroller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value="/server")
+@RequestMapping(value = "/server")
 public class ServerController {
-	
-	
-	
-	
 
 }

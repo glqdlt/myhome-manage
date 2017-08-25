@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.glqdlt.myhome.domain.User;
+import com.glqdlt.myhome.domain.user.User;
 import com.glqdlt.myhome.repository.UserRepository;
 
 /**
@@ -17,8 +17,8 @@ import com.glqdlt.myhome.repository.UserRepository;
  * @author iw.jhun
  *
  */
-@EnableJpaRepositories(basePackages = "com.glqdlt.myhome.*")
-@EntityScan(basePackages = "com.glqdlt.myhome.*")
+@EnableJpaRepositories(basePackages = "com.glqdlt.myhome.repository.*")
+@EntityScan(basePackages = "com.glqdlt.myhome.domain.*")
 @ComponentScan(basePackages = "com.glqdlt.myhome.*")
 @SpringBootApplication
 public class MyhomeApplication implements CommandLineRunner {

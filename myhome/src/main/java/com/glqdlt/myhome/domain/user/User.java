@@ -1,4 +1,4 @@
-package com.glqdlt.myhome.domain;
+package com.glqdlt.myhome.domain.user;
 
 import javax.persistence.*;
 
